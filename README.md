@@ -1,216 +1,121 @@
+# 📱 DOCUMENTACIÓN COMPLETA - APP GUÍA FII UG
+####Universidad de Guayaquil - Facultad de Ingeniería Industrial
+#### Aplicación Android para Navegación del Campus Mapasingue
+## 📑 TABLA DE CONTENIDOS
+1.	Estructura General del Proyecto
+2.	Lenguajes de Programación Utilizados
+3.	Librerías y Dependencias
+4.	Estructura de Carpetas
+5.	Archivos de Configuración
+6.	Actividades (Pantallas)
+7.	Layouts XML
+8.	Recursos Drawable
+9.	Métodos Principales
+10.	Flujo de Navegación
 
-[GUIA_FII_UG_DOCUMENTACION.md](https://github.com/user-attachments/files/25082957/GUIA_FII_UG_DOCUMENTACION.md)
-📱 DOCUMENTACIÓN COMPLETA - APP GUÍA FII UG
-
-Universidad de Guayaquil - Facultad de Ingeniería Industrial
-
-Aplicación Android para Navegación del Campus Mapasingue
-
-
-
-📑 TABLA DE CONTENIDOS
-
-Estructura General del Proyecto
-
-Lenguajes de Programación Utilizados
-
-Librerías y Dependencias
-
-Estructura de Carpetas
-
-Archivos de Configuración
-
-Actividades (Pantallas)
-
-Layouts XML
-
-Recursos Drawable
-
-Métodos Principales
-
-Flujo de Navegación
-
-
-
-1. ESTRUCTURA GENERAL DEL PROYECTO {#estructura-general}
-
+## 1. ESTRUCTURA GENERAL DEL PROYECTO {#estructura-general}
 El proyecto está organizado siguiendo la arquitectura estándar de Android:
-
+```
 GUIAFIIUG/
-
 ├── app/
-
 │   ├── manifests/
-
 │   │   └── AndroidManifest.xml
-
 │   ├── java/com.vargas.guiafiiug/
-
 │   │   ├── MainActivity.kt
-
 │   │   ├── AulasActivity.java
-
 │   │   ├── BloquesActivity.java
-
 │   │   ├── DepartamentosActivity.java
-
 │   │   ├── DetalleActivity.java
-
 │   │   ├── LocationData.java
-
 │   │   ├── MapaActivity.java
-
 │   │   └── ResultadoActivity.java
-
 │   ├── res/
-
 │   │   ├── drawable/
-
 │   │   ├── layout/
-
 │   │   ├── values/
-
 │   │   └── mipmap/
-
 │   └── build.gradle.kts
-
 ├── gradle/
-
 └── settings.gradle.kts
+```
 
+## 2. LENGUAJES DE PROGRAMACIÓN UTILIZADOS {#lenguajes}
+### 2.1 KOTLIN
+**Archivo:** MainActivity.kt
+**¿Por qué Kotlin?**
+- Lenguaje moderno oficial de Android (desde 2017)
+- Código más conciso que Java (menos líneas)
+- Null safety (previene errores de null)
+- Sintaxis más limpia y expresiva
 
+**¿Dónde se usa en este proyecto?**
+- MainActivity.kt: Pantalla principal de la aplicación
+- Gestión de eventos de búsqueda
+- Navegación entre secciones
 
-2. LENGUAJES DE PROGRAMACIÓN UTILIZADOS {#lenguajes}
-
-2.1 KOTLIN
-
-Archivo: MainActivity.kt
-
-¿Por qué Kotlin?
-
-Lenguaje moderno oficial de Android (desde 2017)
-
-Código más conciso que Java (menos líneas)
-
-Null safety (previene errores de null)
-
-Sintaxis más limpia y expresiva
-
-¿Dónde se usa en este proyecto?
-
-MainActivity.kt: Pantalla principal de la aplicación
-
-Gestión de eventos de búsqueda
-
-Navegación entre secciones
-
-Características utilizadas:
-
+**Características utilizadas:**
+```
 // Lambda expressions (funciones cortas)
-
 searchButton.setOnClickListener { realizarBusqueda() }
 
-
-
 // Null safety
-
 val busqueda = searchEditText.text.toString().trim()
 
-
-
 // Smart casts
-
 if (busqueda.isEmpty()) { ... }
+```
+### 2.2 JAVA
+**Archivos:** Todas las demás Activities y LocationData
 
+**¿Por qué Java?**
+- Lenguaje tradicional de Android
+- Mayor compatibilidad con librerías antiguas
+- Más documentación disponible
+- Fácil de entender para principiantes
 
+**¿Dónde se usa en este proyecto?**
+- **LocationData.java**: Base de datos en memoria
+- **AulasActivity.java**: Listado de aulas
+- **BloquesActivity.java**: Listado de bloques
+- **DepartamentosActivity.java**: Departamentos y servicios
+- **DetalleActivity.java**: Detalles de ubicaciones
+- **MapaActivity.java**: Visualización del mapa
+- **ResultadoActivity.java**: Resultados de búsqueda
 
-2.2 JAVA
+### 2.3 XML (eXtensible Markup Language)
+Carpeta: ```res/layout/ y res/drawable/```
 
-Archivos: Todas las demás Activities y LocationData
+**¿Por qué XML?**
+- Lenguaje de marcado para definir interfaces
+- Separa la lógica (Java/Kotlin) de la vista (XML)
+- Fácil de leer y modificar
+- Permite previsualización en Android Studio
 
-¿Por qué Java?
+**¿Dónde se usa?**
+- **Layouts:** Diseño de pantallas
+- **Drawables:** Formas, gradientes, fondos
+- **Strings:** Textos de la aplicación
+- **Manifest:** Configuración de la app
 
-Lenguaje tradicional de Android
+## 3. LIBRERÍAS Y DEPENDENCIAS {#librerias}
 
-Mayor compatibilidad con librerías antiguas
-
-Más documentación disponible
-
-Fácil de entender para principiantes
-
-¿Dónde se usa en este proyecto?
-
-LocationData.java: Base de datos en memoria
-
-AulasActivity.java: Listado de aulas
-
-BloquesActivity.java: Listado de bloques
-
-DepartamentosActivity.java: Departamentos y servicios
-
-DetalleActivity.java: Detalles de ubicaciones
-
-MapaActivity.java: Visualización del mapa
-
-ResultadoActivity.java: Resultados de búsqueda
-
-
-
-2.3 XML (eXtensible Markup Language)
-
-Carpeta: res/layout/ y res/drawable/
-
-¿Por qué XML?
-
-Lenguaje de marcado para definir interfaces
-
-Separa la lógica (Java/Kotlin) de la vista (XML)
-
-Fácil de leer y modificar
-
-Permite previsualización en Android Studio
-
-¿Dónde se usa?
-
-Layouts: Diseño de pantallas
-
-Drawables: Formas, gradientes, fondos
-
-Strings: Textos de la aplicación
-
-Manifest: Configuración de la app
-
-
-
-3. LIBRERÍAS Y DEPENDENCIAS {#librerias}
-
-3.1 AndroidX Core KTX
-
+### 3.1 AndroidX Core KTX
+```
 implementation(libs.androidx.core.ktx)
+```
+**Propósito:**
+- Extensiones de Kotlin para Android
+- Simplifica operaciones comunes
+- Mejora la legibilidad del código
 
-Propósito:
-
-Extensiones de Kotlin para Android
-
-Simplifica operaciones comunes
-
-Mejora la legibilidad del código
-
-Ejemplo de uso:
-
+**Ejemplo de uso:**
+```
 // Sin KTX
-
 view.setOnClickListener(new View.OnClickListener() { ... })
-
-
-
 // Con KTX
-
 view.setOnClickListener { ... }
-
-
-
-3.2 AppCompat
+```
+### 3.2 AppCompat
 
 implementation(libs.androidx.appcompat)
 
@@ -230,7 +135,7 @@ Temas y estilos modernos
 
 
 
-3.3 Material Design
+### 3.3 Material Design
 
 implementation(libs.material)
 
@@ -252,7 +157,7 @@ Elevation: Sombras y profundidad
 
 
 
-3.4 ConstraintLayout
+### 3.4 ConstraintLayout
 
 implementation(libs.androidx.constraintlayout)
 
@@ -272,7 +177,7 @@ Posicionamiento relativo de elementos
 
 
 
-3.5 CardView
+### 3.5 CardView
 
 implementation("androidx.cardview:cardview:1.0.0")
 
@@ -292,7 +197,7 @@ Cards informativas
 
 
 
-3.6 PhotoView
+### 3.6 PhotoView
 
 implementation("com.github.chrisbanes:PhotoView:2.3.0")
 
@@ -320,9 +225,9 @@ Características:
 
 
 
-4. ESTRUCTURA DE CARPETAS {#carpetas}
+## 4. ESTRUCTURA DE CARPETAS {#carpetas}
 
-4.1 📁 MANIFESTS
+# 4.1 📁 MANIFESTS
 
 Ubicación: app/manifests/AndroidManifest.xml
 
@@ -386,7 +291,7 @@ intent-filter: Define cómo se puede abrir la Activity
 
 
 
-4.2 📁 JAVA/KOTLIN (com.vargas.guiafiiug)
+### 4.2 📁 JAVA/KOTLIN (com.vargas.guiafiiug)
 
 Ubicación: app/java/com.vargas.guiafiiug/
 
@@ -422,9 +327,9 @@ ResultadoActivity.java - Resultados de búsqueda
 
 
 
-4.3 📁 RES (Resources - Recursos)
+### 4.3 📁 RES (Resources - Recursos)
 
-4.3.1 🎨 DRAWABLE
+# 4.3.1 🎨 DRAWABLE
 
 Ubicación: app/res/drawable/
 
@@ -528,7 +433,7 @@ Uso: Campo de texto de búsqueda
 
 
 
-4.3.2 📐 LAYOUT
+# 4.3.2 📐 LAYOUT
 
 Ubicación: app/res/layout/
 
@@ -602,7 +507,7 @@ Descripción
 
 
 
-4.3.3 📝 VALUES
+# 4.3.3 📝 VALUES
 
 Ubicación: app/res/values/
 
@@ -646,7 +551,7 @@ Ventajas:
 
 
 
-4.3.4 🎭 MIPMAP
+# 4.3.4 🎭 MIPMAP
 
 Ubicación: app/res/mipmap/
 
@@ -666,9 +571,9 @@ Versiones: mdpi, hdpi, xhdpi, xxhdpi, xxxhdpi
 
 
 
-5. ARCHIVOS DE CONFIGURACIÓN {#configuracion}
+## 5. ARCHIVOS DE CONFIGURACIÓN {#configuracion}
 
-5.1 build.gradle.kts (Module: app)
+### 5.1 build.gradle.kts (Module: app)
 
 Ubicación: app/build.gradle.kts
 
@@ -728,7 +633,7 @@ dependencies {
 
 
 
-5.2 settings.gradle.kts
+### 5.2 settings.gradle.kts
 
 Ubicación: Raíz del proyecto
 
@@ -756,7 +661,7 @@ maven { url = uri("https://jitpack.io") }  // JitPack (PhotoView)
 
 
 
-5.3 libs.versions.toml
+### 5.3 libs.versions.toml
 
 Ubicación: gradle/libs.versions.toml
 
@@ -772,7 +677,11 @@ Facilita actualizaciones
 
 agp = "9.0.0"
 
+```
+
 kotlin = "1.9.22"
+
+```
 
 coreKtx = "1.10.1"
 
@@ -784,9 +693,9 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = 
 
 
 
-6. ACTIVIDADES (PANTALLAS) {#actividades}
+## 6. ACTIVIDADES (PANTALLAS) {#actividades}
 
-6.1 🏠 MainActivity.kt
+### 6.1 🏠 MainActivity.kt
 
 Tipo: Kotlin
 Layout: activity_main.xml
@@ -899,7 +808,7 @@ startActivity(Intent(this, AulasActivity::class.java))
 
 
 
-6.2 📚 AulasActivity.java
+### 6.2 📚 AulasActivity.java
 
 Tipo: Java
 Layout: activity_lista.xml
@@ -1032,7 +941,7 @@ Añade el item al contenedor
 
 
 
-6.3 🏛️ BloquesActivity.java
+### 6.3 🏛️ BloquesActivity.java
 
 Tipo: Java
 Layout: activity_lista.xml
@@ -1167,7 +1076,7 @@ Si hay más, indica cuántas más hay
 
 
 
-6.4 🏢 DepartamentosActivity.java
+### 6.4 🏢 DepartamentosActivity.java
 
 Tipo: Java
 Layout: activity_lista.xml
@@ -1286,7 +1195,7 @@ Añade al contenedor
 
 
 
-6.5 📄 DetalleActivity.java
+### 6.5 📄 DetalleActivity.java
 
 Tipo: Java
 Layout: activity_detalle.xml
@@ -1419,7 +1328,7 @@ Asigna ícono según el tipo de ubicación
 
 
 
-6.6 🗺️ MapaActivity.java
+### 6.6 🗺️ MapaActivity.java
 
 Tipo: Java
 Layout: activity_mapa.xml
@@ -1490,7 +1399,7 @@ PhotoView automáticamente permite:
 
 
 
-6.7 🔍 ResultadoActivity.java
+### 6.7 🔍 ResultadoActivity.java
 
 Tipo: Java
 Layout: activity_resultado.xml
@@ -1505,7 +1414,11 @@ Mostrar mensaje si no hay resultados
 
 Variables principales:
 
+```
+
 java
+
+```
 
 private TextView tituloResultado, noResultadosText;
 
@@ -1517,7 +1430,11 @@ Métodos:
 
 onCreate(Bundle savedInstanceState)
 
+```
+
 java
+
+```
 
 @Override
 
@@ -1567,7 +1484,11 @@ mostrarResultados(resultados);
 
 mostrarResultados(List<Ubicacion> resultados)
 
+```
+
 java
+
+```
 
 private void mostrarResultados(List<LocationData.Ubicacion> resultados) {
 
@@ -1707,7 +1628,7 @@ Añade al contenedor
 
 
 
-6.8 🗄️ LocationData.java
+### 6.8 🗄️ LocationData.java
 
 Tipo: Java
 NO tiene layout (es solo lógica)
@@ -1722,7 +1643,11 @@ Proveer métodos de búsqueda y filtrado
 
 Clase interna: Ubicacion
 
+```
+
 java
+
+```
 
 public static class Ubicacion {
 
@@ -1762,7 +1687,11 @@ this.instrucciones = instrucciones;
 
 Variables estáticas:
 
+```
+
 java
+
+```
 
 private static List<Ubicacion> ubicaciones;
 
@@ -1774,7 +1703,11 @@ Métodos principales:
 
 obtenerTodasLasUbicaciones()
 
+```
+
 java
+
+```
 
 public static List<Ubicacion> obtenerTodasLasUbicaciones() {
 
@@ -1798,7 +1731,11 @@ Retorna la lista completa
 
 inicializarUbicaciones()
 
+```
+
 java
+
+```
 
 private static void inicializarUbicaciones() {
 
@@ -1840,7 +1777,11 @@ Incluye: aulas, laboratorios, departamentos, servicios
 
 buscarUbicacion(String termino)
 
+```
+
 java
+
+```
 
 public static List<Ubicacion> buscarUbicacion(String termino) {
 
@@ -1888,7 +1829,11 @@ Retorna lista de coincidencias
 
 obtenerPorTipo(String tipo)
 
+```
+
 java
+
+```
 
 public static List<Ubicacion> obtenerPorTipo(String tipo) {
 
@@ -1922,7 +1867,11 @@ Retorna lista filtrada
 
 obtenerPorBloque()
 
+```
+
 java
+
+```
 
 public static Map<String, List<Ubicacion>> obtenerPorBloque() {
 
@@ -2272,7 +2221,7 @@ Sombra sutil
 
 
 
-8. RECURSOS DRAWABLE {#drawable}
+## 8. RECURSOS DRAWABLE {#drawable}
 
 ¿Por qué usar drawables XML en lugar de imágenes?
 
@@ -2288,9 +2237,13 @@ Ventajas:
 
 Tipos de drawables usados:
 
-8.1 Shape con Solid (Color sólido)
+### 8.1 Shape con Solid (Color sólido)
+
+```
 
 xml
+
+```
 
 <shape>
 
@@ -2302,9 +2255,13 @@ xml
 
 Usos: button_background.xml, item_background.xml
 
-8.2 Shape con Gradient (Degradado)
+### 8.2 Shape con Gradient (Degradado)
+
+```
 
 xml
+
+```
 
 <shape>
 
@@ -2322,9 +2279,13 @@ android:angle="135"/>
 
 Usos: card_background_1 a 4, header_gradient.xml
 
-8.3 Shape con Stroke (Borde)
+### 8.3 Shape con Stroke (Borde)
+
+```
 
 xml
+
+```
 
 <shape>
 
@@ -2360,9 +2321,9 @@ width: Grosor del borde
 
 
 
-9. MÉTODOS PRINCIPALES {#metodos}
+## 9. MÉTODOS PRINCIPALES {#metodos}
 
-9.1 Métodos del ciclo de vida de Android
+### 9.1 Métodos del ciclo de vida de Android
 
 onCreate()
 
@@ -2380,7 +2341,11 @@ Qué hacer aquí:
 
 Ejemplo:
 
+```
+
 java
+
+```
 
 @Override
 
@@ -2400,13 +2365,17 @@ Qué hace: Cierra la Activity actual y vuelve a la anterior
 
 Uso:
 
+```
+
 java
+
+```
 
 btnVolver.setOnClickListener(v -> finish());
 
 
 
-9.2 Métodos de navegación
+### 9.2 Métodos de navegación
 
 startActivity(Intent)
 
@@ -2414,7 +2383,11 @@ Qué hace: Inicia una nueva Activity
 
 Ejemplo básico:
 
+```
+
 java
+
+```
 
 Intent intent = new Intent(this, AulasActivity.class);
 
@@ -2422,7 +2395,11 @@ startActivity(intent);
 
 Con datos (extras):
 
+```
+
 java
+
+```
 
 Intent intent = new Intent(this, DetalleActivity.class);
 
@@ -2438,7 +2415,11 @@ Qué hace: Obtiene datos pasados de otra Activity
 
 Ejemplo:
 
+```
+
 java
+
+```
 
 String nombre = getIntent().getStringExtra("nombre");
 
@@ -2446,7 +2427,7 @@ if (nombre == null) nombre = ""; // Validar null
 
 
 
-9.3 Métodos de vistas
+### 9.3 Métodos de vistas
 
 findViewById()
 
@@ -2454,7 +2435,11 @@ Qué hace: Encuentra una vista por su ID
 
 Ejemplo:
 
+```
+
 java
+
+```
 
 TextView titulo = findViewById(R.id.tituloLista);
 
@@ -2464,7 +2449,11 @@ Qué hace: Establece texto en un TextView
 
 Ejemplo:
 
+```
+
 java
+
+```
 
 titulo.setText("Aulas");
 
@@ -2474,7 +2463,11 @@ Qué hace: Configura acción al tocar un elemento
 
 Java tradicional:
 
+```
+
 java
+
+```
 
 button.setOnClickListener(new View.OnClickListener() {
 
@@ -2490,7 +2483,11 @@ public void onClick(View v) {
 
 Java con lambda:
 
+```
+
 java
+
+```
 
 button.setOnClickListener(v -> {
 
@@ -2500,7 +2497,11 @@ button.setOnClickListener(v -> {
 
 Kotlin:
 
+```
+
 kotlin
+
+```
 
 button.setOnClickListener {
 
@@ -2510,7 +2511,7 @@ button.setOnClickListener {
 
 
 
-9.4 Métodos de layout dinámico
+### 9.4 Métodos de layout dinámico
 
 getLayoutInflater().inflate()
 
@@ -2518,7 +2519,11 @@ Qué hace: Convierte XML a objetos View
 
 Ejemplo:
 
+```
+
 java
+
+```
 
 View itemView = getLayoutInflater().inflate(
 
@@ -2536,7 +2541,11 @@ Qué hace: Agrega una vista a un contenedor
 
 Ejemplo:
 
+```
+
 java
+
+```
 
 aulasContainer.addView(itemView);
 
@@ -2546,13 +2555,17 @@ Qué hace: Elimina todas las vistas hijas
 
 Ejemplo:
 
+```
+
 java
+
+```
 
 resultadosContainer.removeAllViews(); // Limpiar antes de mostrar nuevos resultados
 
 
 
-9.5 Métodos de visibilidad
+### 9.5 Métodos de visibilidad
 
 setVisibility()
 
@@ -2568,7 +2581,11 @@ View.INVISIBLE - Invisible pero ocupa espacio
 
 Ejemplo:
 
+```
+
 java
+
+```
 
 if (resultados.isEmpty()) {
 
@@ -2582,7 +2599,7 @@ noResultadosText.setVisibility(View.GONE);
 
 
 
-9.6 Métodos de Toast
+### 9.6 Métodos de Toast
 
 Toast.makeText().show()
 
@@ -2590,7 +2607,11 @@ Qué hace: Muestra mensaje temporal en pantalla
 
 Ejemplo:
 
+```
+
 java
+
+```
 
 Toast.makeText(
 
@@ -2696,7 +2717,11 @@ Navegación alternativa:
 
 Desde MainActivity → AulasActivity:
 
+```
+
 java
+
+```
 
 aulasCard.setOnClickListener {
 
@@ -2708,7 +2733,11 @@ startActivity(intent)
 
 AulasActivity carga datos:
 
+```
+
 java
+
+```
 
 List<Ubicacion> aulas = LocationData.obtenerPorTipo("aula");
 
@@ -2716,7 +2745,11 @@ List<Ubicacion> aulas = LocationData.obtenerPorTipo("aula");
 
 Usuario toca un aula → DetalleActivity:
 
+```
+
 java
+
+```
 
 itemView.setOnClickListener(v -> {
 
@@ -2730,17 +2763,21 @@ startActivity(intent);
 
 
 
-📊 RESUMEN DE ARCHIVOS Y SUS FUNCIONES
+# 📊 RESUMEN DE ARCHIVOS Y SUS FUNCIONES
 
 
 
-🎯 CONCEPTOS CLAVE
+# 🎯 CONCEPTOS CLAVE
 
 Intent
 
 Objeto que solicita una acción (como abrir otra Activity)
 
+```
+
 java
+
+```
 
 Intent intent = new Intent(OrigenActivity.this, DestinoActivity.class);
 
@@ -2748,7 +2785,11 @@ Extra
 
 Datos adicionales que se pasan en un Intent
 
+```
+
 java
+
+```
 
 intent.putExtra("clave", "valor");
 
