@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Guía FII UG</string>
+    <string name="buscar">Buscar</string>
+    <string name="aulas">Aulas</string>
+    <string name="departamentos">Departamentos</string>
+    <string name="bloques">Bloques</string>
+    <string name="mapa">Mapa Campus</string>
+    <string name="universidad">Universidad de Guayaquil</string>
+    <string name="facultad">Facultad de Ingeniería Industrial</string>
+    <string name="campus">Campus Mapasingue</string>
+    <string name="que_buscas">¿Qué estás buscando?</string>
+    <string name="hint_buscar">Ej: Aula 2C-27, Biblioteca, Secretaría...</string>
+    <string name="accesos_rapidos">Accesos Rápidos</string>
+    <string name="volver">Volver</string>
+    <string name="no_resultados">No se encontraron resultados</string>
+    <string name="intenta_nuevo">Intenta con otro término de búsqueda</string>
+</resources>

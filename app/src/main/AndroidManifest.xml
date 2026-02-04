@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GUIAFIIUG"
+        tools:targetApi="31">
+
+        <!-- MainActivity - Pantalla Principal -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ResultadoActivity - Resultados de búsqueda -->
+        <activity
+            android:name=".ResultadoActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+
+        <!-- AulasActivity - Lista de aulas -->
+        <activity
+            android:name=".AulasActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+
+        <!-- DepartamentosActivity - Lista de departamentos -->
+        <activity
+            android:name=".DepartamentosActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+
+        <!-- BloquesActivity - Lista de bloques -->
+        <activity
+            android:name=".BloquesActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+
+        <!-- MapaActivity - Mapa del campus -->
+        <activity
+            android:name=".MapaActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+
+        <!-- DetalleActivity - Detalles de ubicación -->
+        <activity
+            android:name=".DetalleActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+
+    </application>
+
+</manifest>
