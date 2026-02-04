@@ -1,11 +1,14 @@
 **📱 DOCUMENTACIÓN COMPLETA - APP GUÍA FII UG**
-Universidad de Guayaquil - Facultad de Ingeniería Industrial
-Aplicación Android para Navegación del Campus Mapasingue
+
+**Universidad de Guayaquil - Facultad de Ingeniería Industrial**
+
+*Aplicación Android para Navegación del Campus Universitario de la facultad de Ingeniería Industrial*
+
 ________________________________________
 📑 TABLA DE CONTENIDOS
 1.	Estructura General del Proyecto
 2.	Lenguajes de Programación Utilizados
-3.	Librerías y Dependencias
+3.	Lirerías y Dependencias
 4.	Estructura de Carpetas
 5.	Archivos de Configuración
 6.	Actividades (Pantallas)
@@ -15,27 +18,49 @@ ________________________________________
 10.	Flujo de Navegación
 ________________________________________
 1. ESTRUCTURA GENERAL DEL PROYECTO {#estructura-general}
+
 El proyecto está organizado siguiendo la arquitectura estándar de Android:
+
 GUIAFIIUG/
+
 ├── app/
+
 │   ├── manifests/
+
 │   │   └── AndroidManifest.xml
+
 │   ├── java/com.vargas.guiafiiug/
+
 │   │   ├── MainActivity.kt
+
 │   │   ├── AulasActivity.java
+
 │   │   ├── BloquesActivity.java
+
 │   │   ├── DepartamentosActivity.java
+
 │   │   ├── DetalleActivity.java
+
 │   │   ├── LocationData.java
+
 │   │   ├── MapaActivity.java
+
 │   │   └── ResultadoActivity.java
+
 │   ├── res/
+
 │   │   ├── drawable/
+
 │   │   ├── layout/
+
 │   │   ├── values/
+
 │   │   └── mipmap/
+
 │   └── build.gradle.kts
+
 ├── gradle/
+
 └── settings.gradle.kts
 ________________________________________
 2. LENGUAJES DE PROGRAMACIÓN UTILIZADOS {#lenguajes}
