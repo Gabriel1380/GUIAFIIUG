@@ -17,7 +17,7 @@ ________________________________________
 9.	Métodos Principales
 10.	Flujo de Navegación
 ________________________________________
-1. ESTRUCTURA GENERAL DEL PROYECTO {#estructura-general}
+**1. ESTRUCTURA GENERAL DEL PROYECTO {#estructura-general}**
 
 El proyecto está organizado siguiendo la arquitectura estándar de Android:
 
@@ -63,18 +63,23 @@ GUIAFIIUG/
 
 └── settings.gradle.kts
 ________________________________________
-2. LENGUAJES DE PROGRAMACIÓN UTILIZADOS {#lenguajes}
+**2. LENGUAJES DE PROGRAMACIÓN UTILIZADOS {#lenguajes}**
+
 2.1 KOTLIN
+
 Archivo: MainActivity.kt
+
 ¿Por qué Kotlin?
-•	Lenguaje moderno oficial de Android (desde 2017)
-•	Código más conciso que Java (menos líneas)
-•	Null safety (previene errores de null)
-•	Sintaxis más limpia y expresiva
+- Lenguaje moderno oficial de Android (desde 2017)
+- Código más conciso que Java (menos líneas)
+- Null safety (previene errores de null)
+- Sintaxis más limpia y expresiva
+
 ¿Dónde se usa en este proyecto?
-•	MainActivity.kt: Pantalla principal de la aplicación
-•	Gestión de eventos de búsqueda
-•	Navegación entre secciones
+-MainActivity.kt: Pantalla principal de la aplicación
+-Gestión de eventos de búsqueda
+-Navegación entre secciones
+
 Características utilizadas:
 // Lambda expressions (funciones cortas)
 searchButton.setOnClickListener { realizarBusqueda() }
