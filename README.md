@@ -83,7 +83,7 @@ if (busqueda.isEmpty()) { ... }
 - **ResultadoActivity.java**: Resultados de búsqueda
 
 ### 2.3 XML (eXtensible Markup Language)
-Carpeta: ```res/layout/ y res/drawable/```
+Carpeta: `res/layout/ y res/drawable/`
 
 **¿Por qué XML?**
 - Lenguaje de marcado para definir interfaces
@@ -100,9 +100,8 @@ Carpeta: ```res/layout/ y res/drawable/```
 ## 3. LIBRERÍAS Y DEPENDENCIAS {#librerias}
 
 ### 3.1 AndroidX Core KTX
-```
-implementation(libs.androidx.core.ktx)
-```
+`implementation(libs.androidx.core.ktx)`
+
 **Propósito:**
 - Extensiones de Kotlin para Android
 - Simplifica operaciones comunes
@@ -116,220 +115,132 @@ view.setOnClickListener(new View.OnClickListener() { ... })
 view.setOnClickListener { ... }
 ```
 ### 3.2 AppCompat
+`implementation(libs.androidx.appcompat)`
 
-implementation(libs.androidx.appcompat)
+**Propósito:**
+- Compatibilidad con versiones antiguas de Android
+- Permite usar características modernas en dispositivos viejos
+- Componentes de UI consistentes
 
-Propósito:
-
-Compatibilidad con versiones antiguas de Android
-
-Permite usar características modernas en dispositivos viejos
-
-Componentes de UI consistentes
-
-¿Dónde se usa?
-
-AppCompatActivity: Clase base de todas nuestras Activities
-
-Temas y estilos modernos
-
-
+**¿Dónde se usa?**
+- **AppCompatActivity:** Clase base de todas nuestras Activities
+- Temas y estilos modernos
 
 ### 3.3 Material Design
+`implementation(libs.material)`
 
-implementation(libs.material)
+**Propósito:**
+- Componentes de Google Material Design
+- CardView, Buttons, TextFields mejorados
+- Animaciones y transiciones suaves
 
-Propósito:
-
-Componentes de Google Material Design
-
-CardView, Buttons, TextFields mejorados
-
-Animaciones y transiciones suaves
-
-Componentes usados en el proyecto:
-
-CardView: Tarjetas con sombras y bordes redondeados
-
-MaterialButton: Botones con estilo moderno
-
-Elevation: Sombras y profundidad
-
-
+**Componentes usados en el proyecto:**
+- **CardView:** Tarjetas con sombras y bordes redondeados
+- **MaterialButton:** Botones con estilo moderno
+- **Elevation:** Sombras y profundidad
 
 ### 3.4 ConstraintLayout
+`implementation(libs.androidx.constraintlayout)`
 
-implementation(libs.androidx.constraintlayout)
+**Propósito:**
+- Layout flexible y poderoso
+- Permite crear interfaces complejas sin layouts anidados
+- Mejor rendimiento que LinearLayout/RelativeLayout
 
-Propósito:
-
-Layout flexible y poderoso
-
-Permite crear interfaces complejas sin layouts anidados
-
-Mejor rendimiento que LinearLayout/RelativeLayout
-
-¿Dónde se usa?
-
-Todas las pantallas usan ConstraintLayout como raíz
-
-Posicionamiento relativo de elementos
-
-
+**¿Dónde se usa?**
+- Todas las pantallas usan ConstraintLayout como raíz
+- Posicionamiento relativo de elementos
 
 ### 3.5 CardView
+`implementation("androidx.cardview:cardview:1.0.0")`
 
-implementation("androidx.cardview:cardview:1.0.0")
+**Propósito:**
+- Tarjetas con elevación y bordes redondeados
+- Contenedor visual para agrupar información
 
-Propósito:
-
-Tarjetas con elevación y bordes redondeados
-
-Contenedor visual para agrupar información
-
-¿Dónde se usa?
-
-Cards de accesos rápidos (Aulas, Departamentos, Bloques, Mapa)
-
-Items de listado de ubicaciones
-
-Cards informativas
-
-
+**¿Dónde se usa?**
+- Cards de accesos rápidos (Aulas, Departamentos, Bloques, Mapa)
+- Items de listado de ubicaciones
+- Cards informativas
 
 ### 3.6 PhotoView
+`implementation("com.github.chrisbanes:PhotoView:2.3.0")`
 
-implementation("com.github.chrisbanes:PhotoView:2.3.0")
+**Propósito:**
+- Visualización de imágenes con zoom
+- Pinch to zoom (pellizcar para acercar)
+- Pan (arrastre) de la imagen
 
-Propósito:
-
-Visualización de imágenes con zoom
-
-Pinch to zoom (pellizcar para acercar)
-
-Pan (arrastre) de la imagen
-
-¿Dónde se usa?
-
-MapaActivity: Para ver el mapa satelital con zoom interactivo
+**¿Dónde se usa?**
+`MapaActivity: Para ver el mapa satelital con zoom interactivo`
 
 Características:
-
-✅ Zoom con pellizco
-
-✅ Doble tap para zoom rápido
-
-✅ Arrastre suave
-
-✅ Límites de zoom configurables
-
-
+- ✅ Zoom con pellizco
+- ✅ Doble tap para zoom rápido
+- ✅ Arrastre suave
+- ✅ Límites de zoom configurables
 
 ## 4. ESTRUCTURA DE CARPETAS {#carpetas}
+### 4.1 📁 MANIFESTS
 
-# 4.1 📁 MANIFESTS
-
-Ubicación: app/manifests/AndroidManifest.xml
+**Ubicación:** `app/manifests/AndroidManifest.xml`
 
 ¿Para qué sirve?
+- Archivo de configuración principal de la app
+- Declara todas las Activities (pantallas)
+- Define permisos necesarios
+- Configura el ícono y nombre de la app
+- Establece la Activity de inicio (LAUNCHER)
 
-Archivo de configuración principal de la app
-
-Declara todas las Activities (pantallas)
-
-Define permisos necesarios
-
-Configura el ícono y nombre de la app
-
-Establece la Activity de inicio (LAUNCHER)
-
-Contenido clave:
-
+**Contenido clave:**
+```
 <application
-
-android:icon="@mipmap/ic_launcher"
-
-android:label="@string/app_name"
-
-android:theme="@style/Theme.GUIAFIIUG">
-
-
-
-<!-- Activity principal (pantalla de inicio) -->
-
-<activity android:name=".MainActivity" android:exported="true">
-
-<intent-filter>
-
-<action android:name="android.intent.action.MAIN" />
-
-<category android:name="android.intent.category.LAUNCHER" />
-
-</intent-filter>
-
-</activity>
-
-
-
-<!-- Otras activities -->
-
-<activity android:name=".ResultadoActivity" />
-
-<activity android:name=".AulasActivity" />
-
-...
-
+  android:icon="@mipmap/ic_launcher"
+  android:label="@string/app_name"
+  android:theme="@style/Theme.GUIAFIIUG">
+  
+  <!-- Activity principal (pantalla de inicio) -->
+  <activity android:name=".MainActivity" android:exported="true">
+    <intent-filter>
+      <action android:name="android.intent.action.MAIN" />
+      <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+  </activity>
+  
+  <!-- Otras activities -->
+  <activity android:name=".ResultadoActivity" />
+  <activity android:name=".AulasActivity" />
+  ...
 </application>
+```
+**Elementos importantes:**
 
-Elementos importantes:
-
-android:exported="true": Permite abrir la app desde el launcher
-
-android:parentActivityName: Define navegación hacia atrás
-
-intent-filter: Define cómo se puede abrir la Activity
-
-
+- `android:exported="true":` Permite abrir la app desde el launcher
+- `android:parentActivityName:` Define navegación hacia atrás
+- `intent-filter:` Define cómo se puede abrir la Activity
 
 ### 4.2 📁 JAVA/KOTLIN (com.vargas.guiafiiug)
+**Ubicación:** `app/java/com.vargas.guiafiiug/`
 
-Ubicación: app/java/com.vargas.guiafiiug/
+**¿Para qué sirve?**
+- Contiene todo el código ejecutable de la app
+- Lógica de negocio
+- Gestión de eventos
+- Navegación entre pantallas
+- Procesamiento de datos
 
-¿Para qué sirve?
-
-Contiene todo el código ejecutable de la app
-
-Lógica de negocio
-
-Gestión de eventos
-
-Navegación entre pantallas
-
-Procesamiento de datos
-
-Archivos:
-
-MainActivity.kt - Pantalla principal
-
-AulasActivity.java - Lista de aulas
-
-BloquesActivity.java - Lista de bloques
-
-DepartamentosActivity.java - Departamentos
-
-DetalleActivity.java - Detalles de ubicación
-
-LocationData.java - Base de datos
-
-MapaActivity.java - Mapa del campus
-
-ResultadoActivity.java - Resultados de búsqueda
-
-
+**Archivos:**
+- `MainActivity.kt` - Pantalla principal
+- `AulasActivity.java` - Lista de aulas
+- `BloquesActivity.java` - Lista de bloques
+- `DepartamentosActivity.java` - Departamentos
+- `DetalleActivity.java` - Detalles de ubicación
+- `LocationData.java` - Base de datos
+- `MapaActivity.java` - Mapa del campus
+- `ResultadoActivity.java` - Resultados de búsqueda
 
 ### 4.3 📁 RES (Resources - Recursos)
-
-# 4.3.1 🎨 DRAWABLE
+#### 4.3.1 🎨 DRAWABLE
 
 Ubicación: app/res/drawable/
 
